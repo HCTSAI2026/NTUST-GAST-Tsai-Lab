@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Facilities | Hsieh-Chih Tsai Research Group</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.instrument-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:28px}.instrument-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 7px 22px rgba(20,40,70,.06);transition:.2s ease}.instrument-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,40,70,.1)}.instrument-image{background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:10px;border-bottom:1px solid var(--line)}.instrument-image img{width:100%;height:100%;object-fit:contain}.instrument-copy{padding:18px 19px 20px}.instrument-copy h3{font-size:19px;line-height:1.35;margin:0 0 6px;color:var(--nav)}.instrument-model{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#52708d;margin-bottom:8px}.instrument-copy p{font-size:14px;color:var(--muted);margin:0}.instrument-section{margin:48px 0}.instrument-section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;padding-bottom:12px;border-bottom:1px solid var(--line)}.instrument-section-head h2{margin:0;font-size:26px}.instrument-section-head span{font-size:13px;color:var(--muted)}@media(max-width:900px){.instrument-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.instrument-grid{grid-template-columns:1fr}.instrument-section-head{display:block}.instrument-section-head span{display:block;margin-top:5px}}
+</style>
 </head>
 <body>
 <header class="top">
@@ -14,13 +17,7 @@
       <p>Graduate Institute of Applied Science and Technology &amp; Advanced Membrane Materials Research Center<br>National Taiwan University of Science and Technology</p>
     </div>
     <nav class="nav">
-      <a href="index.html">HOME</a>
-      <a href="profile.html">PROFILE</a>
-      <a href="research.html">RESEARCH</a>
-      <a href="publications.html">PUBLICATIONS</a>
-      <a href="members.html">MEMBERS</a>
-      <a href="facilities.html">FACILITIES</a>
-      <a href="contact.html">CONTACT</a>
+      <a href="index.html">HOME</a><a href="profile.html">PROFILE</a><a href="research.html">RESEARCH</a><a href="publications.html">PUBLICATIONS</a><a href="members.html">MEMBERS</a><a href="facilities.html">FACILITIES</a><a href="contact.html">CONTACT</a>
     </nav>
   </div>
 </header>
@@ -29,168 +26,67 @@
   <div class="wrap">
     <p class="eyebrow dark">LABORATORY CAPABILITIES</p>
     <h2>Facilities &amp; Instruments</h2>
-    <p class="facilities-intro">
-      Our facilities support polymer and hydrogel characterization, particle analysis, membrane research,
-      chromatographic separation, optical spectroscopy, rheology, and cell-based biomedical studies.
-    </p>
+    <p class="facilities-intro">Our laboratory integrates particle characterization, optical spectroscopy, chromatographic analysis, rheology, surface analysis, and advanced fluorescence imaging to support research in functional polymers, hydrogels, particles, membranes, biomaterials, and drug-delivery systems.</p>
 
-    <section class="facility-category">
-      <div class="facility-category-head">
-        <div>
-          <span class="facility-kicker">01</span>
-          <h3>Spectroscopy &amp; Optical Characterization</h3>
-        </div>
-        <span class="facility-category-count">5 instruments</span>
-      </div>
+    <section class="instrument-section">
+      <div class="instrument-section-head"><h2>Major Analytical Instruments</h2><span>10 instruments</span></div>
+      <div class="instrument-grid">
 
-      <div class="facility-grid">
-        <article class="facility-card">
-          <div class="facility-icon">UV</div>
-          <div class="facility-card-body">
-            <h4>UV–Visible Spectrophotometer</h4>
-            <p>Absorbance and optical characterization for polymers, nanoparticles, drug formulations, and solution-based assays.</p>
-            <span class="facility-tag">Optical Analysis</span>
-          </div>
+        <article class="instrument-card">
+          <div class="instrument-image"><img src="images/01_anton_paar_litesizer_dls_501.png?v=20261003" alt="Anton Paar Litesizer DLS 501"></div>
+          <div class="instrument-copy"><div class="instrument-model">Anton Paar · Litesizer DLS 501</div><h3>Dynamic Light Scattering Analyzer</h3><p>Particle-size and colloidal characterization for nanoparticles, polymer assemblies, micelles, and microspheres.</p></div>
         </article>
 
-        <article class="facility-card">
-          <div class="facility-icon">IR</div>
-          <div class="facility-card-body">
-            <h4>FT-IR Spectrometer</h4>
-            <p>Functional-group identification and chemical-structure analysis for polymers, hydrogels, membranes, and composite materials.</p>
-            <span class="facility-tag">Chemical Structure</span>
-          </div>
+        <article class="instrument-card">
+          <div class="instrument-image"><img src="images/02_teledyne_isco_fraction_collector.png?v=20261003" alt="Teledyne ISCO fraction collector"></div>
+          <div class="instrument-copy"><div class="instrument-model">Teledyne ISCO</div><h3>Automated Fraction Collector</h3><p>Automated collection of chromatographic fractions for separation, purification, and downstream analytical workflows.</p></div>
         </article>
 
-        <article class="facility-card">
-          <div class="facility-icon">R</div>
-          <div class="facility-card-body">
-            <h4>Confocal Raman Microscope</h4>
-            <p>Raman spectral mapping and chemical imaging for functional materials, membranes, particles, and composite systems.</p>
-            <span class="facility-tag">Raman Mapping</span>
-          </div>
+        <article class="instrument-card">
+          <div class="instrument-image"><img src="images/03_labtech_analytical_system.png?v=20261003" alt="LabTech chromatographic analytical system"></div>
+          <div class="instrument-copy"><div class="instrument-model">LabTech</div><h3>Chromatographic Analysis System</h3><p>Automated chromatographic platform for polymer and formulation analysis, including oil-phase GPC-related workflows.</p></div>
         </article>
 
-        <article class="facility-card">
-          <div class="facility-icon">FL</div>
-          <div class="facility-card-body">
-            <h4>Fluorometer</h4>
-            <p>Fluorescence intensity and spectral measurements for fluorescent probes, biomaterials, nanoparticles, and drug-delivery studies.</p>
-            <span class="facility-tag">Fluorescence Analysis</span>
-          </div>
+        <article class="instrument-card">
+          <div class="instrument-image"><img src="images/04_jasco_fp_8250_spectrofluorometer.png?v=20261003" alt="JASCO FP-8250 spectrofluorometer"></div>
+          <div class="instrument-copy"><div class="instrument-model">JASCO · FP-8250</div><h3>Spectrofluorometer</h3><p>Fluorescence excitation and emission measurements for probes, nanoparticles, biomaterials, and drug-delivery studies.</p></div>
         </article>
 
-        <article class="facility-card featured">
-          <div class="facility-icon">FM</div>
-          <div class="facility-card-body">
-            <div class="facility-new">NEW</div>
-            <h4>Fluorescence Microscope</h4>
-            <p>Fluorescence imaging for cell-based studies, biomaterial interfaces, uptake experiments, and fluorescently labeled samples.</p>
-            <span class="facility-tag">Cell &amp; Material Imaging</span>
-          </div>
+        <article class="instrument-card">
+          <div class="instrument-image"><img src="images/05_jasco_hplc_system.png?v=20261003" alt="JASCO HPLC system"></div>
+          <div class="instrument-copy"><div class="instrument-model">JASCO · HPLC System</div><h3>High-Performance Liquid Chromatography</h3><p>Separation and quantitative analysis of small molecules, drugs, degradation products, and formulation components.</p></div>
         </article>
+
+        <article class="instrument-card">
+          <div class="instrument-image"><img src="images/06_jasco_nrs_4500_raman_spectrometer.png?v=20261003" alt="JASCO NRS-4500 Raman spectrometer"></div>
+          <div class="instrument-copy"><div class="instrument-model">JASCO · NRS-4500</div><h3>Raman Spectrometer</h3><p>Raman spectroscopy and chemical mapping for polymers, membranes, particles, composites, and functional materials.</p></div>
+        </article>
+
+        <article class="instrument-card">
+          <div class="instrument-image"><img src="images/07_jasco_v_730_spectrophotometer.png?v=20261003" alt="JASCO V-730 UV-Visible spectrophotometer"></div>
+          <div class="instrument-copy"><div class="instrument-model">JASCO · V-730</div><h3>UV–Visible Spectrophotometer</h3><p>Absorbance and optical characterization for polymers, nanoparticles, drug formulations, and solution-based assays.</p></div>
+        </article>
+
+        <article class="instrument-card">
+          <div class="instrument-image"><img src="images/08_leica_inverted_microscope.png?v=20261003" alt="Leica inverted fluorescence microscope"></div>
+          <div class="instrument-copy"><div class="instrument-model">Leica</div><h3>Inverted Fluorescence Microscope</h3><p>Fluorescence imaging for cell-based studies, biomaterial interfaces, cellular uptake, and fluorescently labeled samples.</p></div>
+        </article>
+
+        <article class="instrument-card">
+          <div class="instrument-image"><img src="images/09_ta_hr30_rheometer.png?v=20261003" alt="TA Instruments HR30 rheometer"></div>
+          <div class="instrument-copy"><div class="instrument-model">TA Instruments · HR30</div><h3>Rheometer</h3><p>Viscoelasticity, flow behavior, gelation, and temperature-dependent rheological characterization of hydrogels and polymers.</p></div>
+        </article>
+
+        <article class="instrument-card">
+          <div class="instrument-image"><img src="images/10_precision_optical_inspection_dispensing_platform.png?v=20261003" alt="Contact angle and optical inspection platform"></div>
+          <div class="instrument-copy"><div class="instrument-model">Surface Characterization</div><h3>Contact Angle Analyzer</h3><p>Surface wettability and interfacial characterization for membranes, coatings, polymer films, and functional surfaces.</p></div>
+        </article>
+
       </div>
     </section>
-
-    <section class="facility-category">
-      <div class="facility-category-head">
-        <div>
-          <span class="facility-kicker">02</span>
-          <h3>Particle &amp; Surface Characterization</h3>
-        </div>
-        <span class="facility-category-count">2 instruments</span>
-      </div>
-
-      <div class="facility-grid">
-        <article class="facility-card">
-          <div class="facility-icon">DLS</div>
-          <div class="facility-card-body">
-            <h4>Dynamic Light Scattering</h4>
-            <p>Particle-size distribution and colloidal characterization for nanoparticles, micelles, microspheres, and polymer assemblies.</p>
-            <span class="facility-tag">Particle Analysis</span>
-          </div>
-        </article>
-
-        <article class="facility-card">
-          <div class="facility-icon">CA</div>
-          <div class="facility-card-body">
-            <h4>Contact Angle Analyzer</h4>
-            <p>Surface wettability and interfacial characterization for membranes, coatings, polymer films, and functional surfaces.</p>
-            <span class="facility-tag">Surface Properties</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="facility-category">
-      <div class="facility-category-head">
-        <div>
-          <span class="facility-kicker">03</span>
-          <h3>Polymer &amp; Chromatographic Analysis</h3>
-        </div>
-        <span class="facility-category-count">2 instruments</span>
-      </div>
-
-      <div class="facility-grid">
-        <article class="facility-card">
-          <div class="facility-icon">GPC</div>
-          <div class="facility-card-body">
-            <h4>Gel Permeation Chromatograph</h4>
-            <p>Molecular-weight distribution analysis for soluble polymers and polymeric materials.</p>
-            <span class="facility-tag">Molecular Weight</span>
-          </div>
-        </article>
-
-        <article class="facility-card featured">
-          <div class="facility-icon">HPLC</div>
-          <div class="facility-card-body">
-            <div class="facility-new">NEW</div>
-            <h4>High-Performance Liquid Chromatography</h4>
-            <p>Chromatographic separation and quantitative analysis for small molecules, drugs, degradation products, and formulation studies.</p>
-            <span class="facility-tag">Separation &amp; Quantification</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="facility-category">
-      <div class="facility-category-head">
-        <div>
-          <span class="facility-kicker">04</span>
-          <h3>Rheology &amp; Biomedical Research</h3>
-        </div>
-        <span class="facility-category-count">2 facilities</span>
-      </div>
-
-      <div class="facility-grid">
-        <article class="facility-card">
-          <div class="facility-icon">RH</div>
-          <div class="facility-card-body">
-            <h4>Rheometer</h4>
-            <p>Viscoelastic, flow, gelation, and temperature-dependent rheological characterization of hydrogels and polymer systems.</p>
-            <span class="facility-tag">Rheology</span>
-          </div>
-        </article>
-
-        <article class="facility-card">
-          <div class="facility-icon">CELL</div>
-          <div class="facility-card-body">
-            <h4>Cell Culture Room</h4>
-            <p>Cell-based evaluation for biomaterials, drug-delivery systems, cytocompatibility, uptake, and functional biological studies.</p>
-            <span class="facility-tag">Biomedical Evaluation</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <div class="facility-note">
-      <strong>Instrument details:</strong> Manufacturer, model, measurement range, and available accessories can be added once the instrument specifications or photos are provided.
-    </div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="wrap">© Hsieh-Chih Tsai Research Group · National Taiwan University of Science and Technology.</div>
-</footer>
+<footer class="footer"><div class="wrap">© Hsieh-Chih Tsai Research Group · National Taiwan University of Science and Technology.</div></footer>
 </body>
 </html>
