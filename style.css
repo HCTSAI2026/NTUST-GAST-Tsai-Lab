@@ -56,3 +56,8 @@
 .profile-link-card:hover{text-decoration:none;background:#edf4fb;border-color:#b9cde2;transform:translateY(-1px)}
 .profile-link-title{display:block;font-weight:800;color:var(--nav);margin-bottom:3px}
 .profile-link-sub{display:block;color:var(--muted);font-size:13px;line-height:1.5}
+/* TopSciNet profile image */
+.topscinet-image-card{display:block;margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(20,40,70,.06);color:inherit;transition:.18s ease}
+.topscinet-image-card:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,40,70,.10)}
+.topscinet-image-card img{width:100%;height:auto;display:block;background:#f5f7fb}
+.topscinet-caption{display:block;padding:12px 15px;color:var(--muted);font-size:13px;font-weight:700}
