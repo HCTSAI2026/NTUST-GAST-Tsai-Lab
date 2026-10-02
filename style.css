@@ -50,3 +50,9 @@
   .publication-numbered-list{padding-left:30px}
   .publication-numbered-list li{padding-right:0}
 }
+/* Professor external profiles */
+.profile-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:8px}
+.profile-link-card{display:block;background:#f5f8fc;border:1px solid #d9e3ee;border-radius:12px;padding:14px 16px;color:var(--ink);transition:.18s ease}
+.profile-link-card:hover{text-decoration:none;background:#edf4fb;border-color:#b9cde2;transform:translateY(-1px)}
+.profile-link-title{display:block;font-weight:800;color:var(--nav);margin-bottom:3px}
+.profile-link-sub{display:block;color:var(--muted);font-size:13px;line-height:1.5}
