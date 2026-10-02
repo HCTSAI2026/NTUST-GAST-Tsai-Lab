@@ -1,1 +1,145 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Publications</title><link rel="stylesheet" href="style.css"></head><body><header class="top"><div class="wrap"><div class="brand"><h1>Hsieh-Chih Tsai Research Group</h1><p>National Taiwan University of Science and Technology · Advanced Membrane Materials Center</p></div><div class="nav"><a href="index.html">HOME</a><a href="profile.html">PROFILE</a><a href="research.html">RESEARCH</a><a href="publications.html">PUBLICATIONS</a><a href="members.html">MEMBERS</a><a href="facilities.html">FACILITIES</a><a href="contact.html">CONTACT</a></div></div></header><section class="section"><div class="wrap"><h2>Publications</h2><div class="card"><p>The Weebly export contains the publication page entry but did not provide a clean publication list that could be reconstructed reliably into individual citations.</p><p><strong>Recommended:</strong> paste or upload your current publication list (CV, Word, PDF, Google Scholar export, or RIS/BibTeX). This page can then be generated automatically by year.</p></div></div></section><footer class="footer"><div class="wrap">© Hsieh-Chih Tsai Research Group · Rebuilt from Weebly export for GitHub Pages.</div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Publications | Hsieh-Chih Tsai Research Group</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <h1>Hsieh-Chih Tsai Research Group</h1>
+      <p>National Taiwan University of Science and Technology · Advanced Membrane Materials Center</p>
+    </div>
+    <nav class="nav">
+      <a href="index.html">HOME</a>
+      <a href="profile.html">PROFILE</a>
+      <a href="research.html">RESEARCH</a>
+      <a href="publications.html">PUBLICATIONS</a>
+      <a href="members.html">MEMBERS</a>
+      <a href="facilities.html">FACILITIES</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="publication-head">
+      <div>
+        <p class="eyebrow dark">SCOPUS AUTHOR ID 56187150200</p>
+        <h2>Publications</h2>
+        <p class="muted publication-intro">
+          Publication records are synchronized from Scopus and organized automatically by year.
+        </p>
+      </div>
+      <a class="btn scopus-btn"
+         href="https://www.scopus.com/authid/detail.uri?authorId=56187150200"
+         target="_blank" rel="noopener">View Scopus Profile</a>
+    </div>
+
+    <div id="scopus-metrics" class="metric-grid" hidden></div>
+    <div id="publication-status" class="sync-note">Loading Scopus publication data…</div>
+    <div id="publication-list" class="publication-list"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">© Hsieh-Chih Tsai Research Group · National Taiwan University of Science and Technology.</div>
+</footer>
+
+<script>
+(async function () {
+  const status = document.getElementById('publication-status');
+  const list = document.getElementById('publication-list');
+  const metrics = document.getElementById('scopus-metrics');
+
+  function esc(value) {
+    return String(value ?? '').replace(/[&<>"']/g, c => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+    }[c]));
+  }
+
+  try {
+    const response = await fetch('data/scopus-publications.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error('Scopus data not available.');
+    const data = await response.json();
+    const records = Array.isArray(data.publications) ? data.publications : [];
+
+    if (data.metrics) {
+      const cards = [];
+      if (data.metrics.document_count != null) cards.push(['Documents', data.metrics.document_count]);
+      if (data.metrics.citation_count != null) cards.push(['Citations', data.metrics.citation_count]);
+      if (data.metrics.h_index != null) cards.push(['h-index', data.metrics.h_index]);
+
+      if (cards.length) {
+        metrics.innerHTML = cards.map(([label, value]) =>
+          '<div class="metric-card"><strong>' + esc(value) + '</strong><span>' + esc(label) + '</span></div>'
+        ).join('');
+        metrics.hidden = false;
+      }
+    }
+
+    if (!records.length) {
+      status.innerHTML =
+        'Your Scopus profile is linked. Publication synchronization will populate this page after the Scopus API key is configured.';
+      return;
+    }
+
+    records.sort((a, b) =>
+      String(b.date || b.year || '').localeCompare(String(a.date || a.year || ''))
+    );
+
+    const grouped = {};
+    for (const item of records) {
+      const year = item.year || (item.date ? String(item.date).slice(0,4) : 'Other');
+      (grouped[year] ||= []).push(item);
+    }
+
+    list.innerHTML = Object.keys(grouped)
+      .sort((a,b) => (Number(b) || 0) - (Number(a) || 0))
+      .map(year => {
+        const entries = grouped[year].map(item => {
+          const meta = [
+            item.creator,
+            item.journal,
+            item.volume ? 'Vol. ' + item.volume : '',
+            item.issue ? 'Issue ' + item.issue : '',
+            item.pages
+          ].filter(Boolean).map(esc).join(' · ');
+
+          const links = [];
+          if (item.doi) {
+            links.push('<a href="https://doi.org/' + encodeURIComponent(item.doi) +
+              '" target="_blank" rel="noopener">DOI</a>');
+          }
+          if (item.scopus_url) {
+            links.push('<a href="' + esc(item.scopus_url) +
+              '" target="_blank" rel="noopener">Scopus</a>');
+          }
+
+          return '<article class="publication-item">' +
+            '<h3>' + esc(item.title || 'Untitled') + '</h3>' +
+            (meta ? '<p>' + meta + '</p>' : '') +
+            (item.cited_by != null ? '<div class="citation-count">Cited by ' + esc(item.cited_by) + '</div>' : '') +
+            (links.length ? '<div class="pub-links">' + links.join(' · ') + '</div>' : '') +
+            '</article>';
+        }).join('');
+
+        return '<section class="publication-year"><h2>' + esc(year) + '</h2>' + entries + '</section>';
+      }).join('');
+
+    const updated = data.updated_at ? new Date(data.updated_at).toLocaleDateString() : '';
+    status.textContent =
+      'Publication records synchronized from Scopus' + (updated ? ' · Updated ' + updated : '') + '.';
+
+  } catch (err) {
+    status.innerHTML =
+      'Your Scopus profile is linked. Automatic synchronization will appear here after the Scopus API key is configured.';
+  }
+})();
+</script>
+</body>
+</html>
