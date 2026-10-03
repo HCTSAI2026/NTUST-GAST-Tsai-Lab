@@ -4,21 +4,33 @@
   const STORAGE_KEY = 'hct-lab-language';
   const originalText = new WeakMap();
   const originalTitle = document.title;
+  const LAB_TITLE_EN = 'Biomedical Polymers & Optoelectronic Thin Films Laboratory – Prof. Hsieh-Chih Tsai Research Group';
+  const LAB_TITLE_ZH = '生醫高分子與光電薄膜實驗室-蔡協致教授團隊';
+
+  const titleEn = {
+    'Hsieh-Chih Tsai Research Group': LAB_TITLE_EN,
+    'Profile': `Profile | ${LAB_TITLE_EN}`,
+    'Research': `Research | ${LAB_TITLE_EN}`,
+    'Publications | Hsieh-Chih Tsai Research Group': `Publications | ${LAB_TITLE_EN}`,
+    'Members | Hsieh-Chih Tsai Research Group': `Members | ${LAB_TITLE_EN}`,
+    'Facilities | Hsieh-Chih Tsai Research Group': `Facilities | ${LAB_TITLE_EN}`,
+    'Contact | Hsieh-Chih Tsai Research Group': `Contact | ${LAB_TITLE_EN}`
+  };
 
   const titleZh = {
-    'Hsieh-Chih Tsai Research Group': '生醫高分子與光電薄膜實驗室-蔡協致教授團隊',
-    'Profile': '個人資料 | 生醫高分子與光電薄膜實驗室-蔡協致教授團隊',
-    'Research': '研究方向 | 生醫高分子與光電薄膜實驗室-蔡協致教授團隊',
-    'Publications | Hsieh-Chih Tsai Research Group': '學術著作 | 生醫高分子與光電薄膜實驗室-蔡協致教授團隊',
-    'Members | Hsieh-Chih Tsai Research Group': '團隊成員 | 生醫高分子與光電薄膜實驗室-蔡協致教授團隊',
-    'Facilities | Hsieh-Chih Tsai Research Group': '儀器設備 | 生醫高分子與光電薄膜實驗室-蔡協致教授團隊',
-    'Contact | Hsieh-Chih Tsai Research Group': '聯絡資訊 | 生醫高分子與光電薄膜實驗室-蔡協致教授團隊'
+    'Hsieh-Chih Tsai Research Group': LAB_TITLE_ZH,
+    'Profile': `個人資料 | ${LAB_TITLE_ZH}`,
+    'Research': `研究方向 | ${LAB_TITLE_ZH}`,
+    'Publications | Hsieh-Chih Tsai Research Group': `學術著作 | ${LAB_TITLE_ZH}`,
+    'Members | Hsieh-Chih Tsai Research Group': `團隊成員 | ${LAB_TITLE_ZH}`,
+    'Facilities | Hsieh-Chih Tsai Research Group': `儀器設備 | ${LAB_TITLE_ZH}`,
+    'Contact | Hsieh-Chih Tsai Research Group': `聯絡資訊 | ${LAB_TITLE_ZH}`
   };
 
   const pairs = [
     ['Graduate Institute of Applied Science and Technology & Advanced Membrane Materials Research Center', '應用科技研究所暨先進薄膜材料研究中心'],
     ['National Taiwan University of Science and Technology', '國立臺灣科技大學'],
-    ['Hsieh-Chih Tsai Research Group', '生醫高分子與光電薄膜實驗室-蔡協致教授團隊'],
+    ['Hsieh-Chih Tsai Research Group', LAB_TITLE_ZH],
 
     ['We develop functional and porous polymer systems—including smart hydrogels, micro- and nanoparticles, and COF/COP-based materials—for localized drug delivery, theranostics, tissue repair, bioseparation, and wearable bioelectronics. In parallel, we engineer ion-conductive and selective membranes for fuel cells, redox-flow batteries, electrolysis, and advanced separation technologies.', '本研究團隊開發功能性與多孔高分子系統，包括智慧型水膠、微米／奈米粒子及 COF/COP 材料，應用於局部藥物傳輸、診療整合、組織修復、生物分離與穿戴式生醫電子。同時，我們亦開發具離子傳導與選擇性的薄膜，用於燃料電池、氧化還原液流電池、電解與先進分離技術。'],
     ['Functional Polymers, Hydrogels & Advanced Membranes', '功能性高分子、水膠與先進薄膜'],
@@ -213,7 +225,7 @@
   function applyLanguage(lang) {
     const isZh = lang === 'zh';
     document.documentElement.lang = isZh ? 'zh-Hant' : 'en';
-    document.title = isZh ? (titleZh[originalTitle] || originalTitle) : originalTitle;
+    document.title = isZh ? (titleZh[originalTitle] || originalTitle) : (titleEn[originalTitle] || originalTitle);
 
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     const nodes = [];
@@ -225,6 +237,9 @@
       const source = originalText.get(node);
       node.nodeValue = isZh ? zhText(source) : source;
     }
+
+    const brandTitle = document.querySelector('.brand h1');
+    if (brandTitle) brandTitle.textContent = isZh ? LAB_TITLE_ZH : LAB_TITLE_EN;
 
     const yearNav = document.querySelector('.year-nav');
     if (yearNav) yearNav.setAttribute('aria-label', isZh ? '出版年度' : 'Publication years');
