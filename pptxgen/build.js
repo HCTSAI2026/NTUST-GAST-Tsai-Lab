@@ -99,14 +99,12 @@ slide.addText('SCI evidence', {
   fontSize: 12.6, bold: true, color: THEME.colors.navy, margin: 0
 });
 
-// Images are intentionally referenced by stable asset paths.
-// Once assets are placed in ./assets, uncomment these lines.
-// slide.addImage({ path: './assets/01_CF127_chain_end_design.png', x: 0.58, y: 1.38, w: 2.90, h: 2.00 });
-// slide.addImage({ path: './assets/02_radiation_triggered_DOX_release.png', x: 3.95, y: 1.39, w: 5.04, h: 1.98 });
-// slide.addImage({ path: './assets/04_GBM_treatment_timeline.png', x: 1.20, y: 3.88, w: 10.80, h: 0.92 });
-// slide.addImage({ path: './assets/05_SCI_IVIS_four_group_comparison.png', x: 0.48, y: 5.40, w: 6.20, h: 1.58 });
-// slide.addImage({ path: './assets/06_SCI_survival_curve.png', x: 6.92, y: 5.42, w: 2.55, h: 1.52 });
-// slide.addImage({ path: './assets/07_SCI_tumor_radiance_treatment_efficacy.png', x: 9.68, y: 5.39, w: 2.90, h: 1.60 });
+slide.addImage({ path: './assets/01_CF127_chain_end_design.png', x: 0.58, y: 1.38, w: 2.90, h: 2.00 });
+slide.addImage({ path: './assets/02_radiation_triggered_DOX_release.png', x: 3.95, y: 1.39, w: 5.04, h: 1.98 });
+slide.addImage({ path: './assets/04_treatment_timeline.png', x: 1.20, y: 3.88, w: 10.80, h: 0.92 });
+slide.addImage({ path: './assets/ivis_final.png', x: 0.48, y: 5.40, w: 6.20, h: 1.58 });
+slide.addImage({ path: './assets/05_survival_curve.png', x: 6.92, y: 5.42, w: 2.55, h: 1.52 });
+slide.addImage({ path: './assets/06_tumor_radiance.png', x: 9.68, y: 5.39, w: 2.90, h: 1.60 });
 
 slide.addText('Take-home  •  Chain-end engineering converts F127 into a locally retained, radiation-responsive therapeutic depot.', {
   x: 0.50, y: 7.07, w: 9.8, h: 0.21,
