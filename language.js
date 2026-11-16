@@ -114,7 +114,9 @@
     ['Articles', '篇論文'],
     ['Five-year period', '近五年'],
     ['Scopus Author ID', 'Scopus 作者 ID'],
-    ["Recent publications are presented from the laboratory's curated publication list. The Scopus profile link is provided for the complete indexed record.", '近期論文依本實驗室整理之著作清單呈現；完整索引紀錄請參閱 Scopus 個人檔案。'],
+    ["Recent publications are presented from the laboratory's curated publication list and verified journal metadata. See the ", "近期論文依實驗室整理清單與期刊資料核對；亦可參閱 "],
+    ["Google Scholar profile", "Google Scholar 個人檔案"],
+    [" or Scopus for the complete indexed record.", " 或 Scopus 查詢完整索引紀錄。"],
 
     ['OUR TEAM', '研究團隊'],
     ['Current members of the Hsieh-Chih Tsai Research Group at National Taiwan University of Science and Technology.', '國立臺灣科技大學蔡協致研究團隊現任成員。'],
