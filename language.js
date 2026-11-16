@@ -109,7 +109,7 @@
     ['Surface modification of nano- and micromaterials to improve dispersion and interfacial compatibility within polymer matrices and functional composite systems.', '藉由奈米與微米材料表面改質，提升其在高分子基材與功能性複合材料中的分散性與界面相容性。'],
 
     ['RECENT PUBLICATIONS · 2022–2026', '近期學術著作 · 2022–2026'],
-    ['73 journal articles from the most recent five-year period are listed below, grouped by publication year.', '以下列出近五年共 73 篇期刊論文，並依出版年度分類。'],
+    ['77 journal articles from the most recent five-year period are listed below, grouped by publication year.', '以下列出近五年共 77 篇期刊論文，並依出版年度分類。'],
     ['View Scopus Profile', '查看 Scopus 個人檔案'],
     ['Articles', '篇論文'],
     ['Five-year period', '近五年'],
